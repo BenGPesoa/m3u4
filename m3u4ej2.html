@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #2</title> 
+    <link rel="stylesheet" href="estilos.css">   
+    <style>
+        #formulario {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.contador {
+    width: 300px;
+    margin: 0 auto;
+}
+    </style>
+</head>
+<body>
+    <div class="titulo">Ejercicio #2</div>
+    <form id="formulario" class="texto">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+        </p>
+        <p>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido">
+        </p>
+        <p>
+            <label for="mensaje">Mensaje</label>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10" oninput="cuenta()"></textarea>
+        </p>       
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="contador texto">
+        <p>El mensaje debe tener al menos 10 caracteres.</p>
+        <p>Numero de caracteres:</p>
+        <div id="caracteres"></div>
+    </div>
+
+    <div class="texto">
+       <a href="index.html">Volver</a> 
+    </div>
+    
+
+    <script>
+        cuenta();
+
+        var formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if(e.target.nombre.value == '') {
+                alert('el campo nombre es requerido');
+                return;
+            }
+
+            if(e.target.apellido.value == '') {
+                alert('el campo apellido es requerido');
+                return;
+            }
+
+            if(e.target.mensaje.value.length <= 10) {
+                var mensaje = document.getElementById('mensaje');
+            var numcaracteres = mensaje.value.length;
+                alert('su mensaje solo tiene ' + numcaracteres + ' caracteres.');
+                return;
+            }
+
+            alert('Gracias ' + e.target.nombre.value + ' por enviarnos "' + e.target.mensaje.value + '"');
+
+
+        })
+
+        // var texto = document.getElementById('mensaje');
+        // texto.add
+
+
+        function cuenta() {
+            var mensaje = document.getElementById('mensaje');
+            var numcaracteres = mensaje.value.length;
+            var total = document.getElementById('caracteres');
+            caracteres.innerText = numcaracteres;
+            console.log(numcaracteres);
+            // return;
+        }
+
+
+    </script>
+</body>
+</html>

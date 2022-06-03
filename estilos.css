@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo {
+    color: white;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 35px;
+    margin: 0 auto;
+}
+
+
+.texto {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.texto a {
+    color: white;
+    font-size: 25px;
+}
+
+.linea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.abreLinea {
+    width: 100px;
+    height: 0.005rem;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    margin-right: 15px;
+}
+
+.cierraLinea {
+    width: 100px;
+    height: 0.005rem;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    margin-left: 15px;
+}

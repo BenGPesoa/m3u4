@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #3</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="titulo">
+        Ejercicio #3
+    </div>
+    <script>
+        var alumnos = [
+            {
+                nombre: 'Juan Gomez',
+                nota: 7
+            }, {
+                nombre: 'Pedro Rodriguez',
+                nota: 4
+            }, {
+                nombre: 'Roxana García',
+                nota: 8
+            }, {
+                nombre: 'Luciano Lopez',
+                nota: 5
+            }, {
+                nombre: 'Fernanda Gimenez',
+                nota: 6
+            }, {
+                nombre: 'Florencia Martinez',
+                nota: 10
+            }, {
+                nombre: 'Raul Sanchez',
+                nota: 7
+            }, {
+                nombre: 'Sandra Figueroa',
+                nota: 8
+            }
+        ];
+
+        var cantAlumnos = alumnos.length;
+        var notas = [];
+        var nombres = [];
+
+        //    for(var i=0; i <= cantAlumnos; i++) {
+        //        var alumno = alumnos[i];
+        //        console.log(alumno);
+        //        nombre[i] = alumnos.map(function(num) {
+        //            return alumnos.nombre;
+        //        });
+        //        nota[i] = alumnos.map(function(num) {
+        //            return alumnos.nota;
+        //        });
+        //    }
+
+
+        // --------- YO SE QUE ESTO NO ES MUY ELEGANTE, PERO PROBE DE MIL MANERAS Y NO PODIA ESTRAER LOS DATOS DE NOMBRE Y NOTA DEL ARRAY ALUMNOS... AL FINAL ENCONTRE ESTA SOLUCION MUY "MANUAL". LO MISMO ME PASO CUANDO QUISE IMPRIMIR LOS DATOS OBTENIDOS, PERO EN EL CONSOLE.LOG AL FONDO DE ESTE ARCHIVO SE PUEDE VER EL ARRAY CON LOS ESTUDIANTES APROBADOS.-------
+
+
+        var alumno0 = alumnos[0];
+        nombres[0] = alumno0.nombre;
+        notas[0] = alumno0.nota;
+
+        var alumno1 = alumnos[1];
+        nombres[1] = alumno1.nombre;
+        notas[1] = alumno1.nota;
+
+        var alumno2 = alumnos[2];
+        nombres[2] = alumno2.nombre;
+        notas[2] = alumno2.nota;
+
+        var alumno3 = alumnos[3];
+        nombres[3] = alumno3.nombre;
+        notas[3] = alumno3.nota;
+
+        var alumno4 = alumnos[4];
+        nombres[4] = alumno4.nombre;
+        notas[4] = alumno4.nota;
+
+        var alumno5 = alumnos[5];
+        nombres[5] = alumno5.nombre;
+        notas[5] = alumno5.nota;
+
+        var alumno6 = alumnos[6];
+        nombres[6] = alumno6.nombre;
+        notas[6] = alumno6.nota;
+
+        var alumno7 = alumnos[7];
+        nombres[7] = alumno7.nombre;
+        notas[7] = alumno7.nota;
+
+        var estudiantes = [alumno0, alumno1, alumno2, alumno3, alumno4, alumno5, alumno6, alumno7];
+
+
+        for (var i = 0; i < cantAlumnos; i++) {
+            var alumno = estudiantes[i];
+            corregir();
+            estudiantes[i] = alumno;
+        }
+
+
+
+        function corregir() {
+            var nota = alumno.nota;
+            if (nota >= 7) {
+                alumno = {
+                    ...alumno,
+                    aprobado: true
+                }
+            } else {
+                alumno = {
+                    ...alumno,
+                    aprobado: false
+                }
+            };
+        };
+
+
+        // function listaAprobados() {
+        //     aprobados = estudiantes.filter(function(){
+        //         estudiantes.aprobado == true;
+        //     } );
+        // };
+
+
+        var aprobados = [];
+        var apNum = 0;
+        var reprobados = [];
+        var reNum = 0;
+
+        for (var i = 0; i < cantAlumnos; i++) {
+            var alumno = estudiantes[i];
+            var apOno = alumno.aprobado;
+            console.log(apOno);
+            if (apOno == true) {
+                aprobados[apNum] = alumno;
+                apNum = apNum + 1;
+            } else {
+                reprobados[reNum] = alumno;
+                reNum = reNum + 1;
+            };
+        };
+
+
+        var nombresAp = [];
+        var notasAp = [];
+
+        var aprobado0 = aprobados[0];
+        nombresAp[0] = aprobado0.nombre;
+        notasAp[0] = aprobado0.nota;
+
+        var aprobado1 = aprobados[1];
+        nombresAp[1] = aprobado1.nombre;
+        notasAp[1] = aprobado1.nota;
+
+        var aprobado2 = aprobados[2];
+        nombresAp[2] = aprobado2.nombre;
+        notasAp[2] = aprobado2.nota;
+
+        var aprobado3 = aprobados[3];
+        nombresAp[3] = aprobado3.nombre;
+        notasAp[3] = aprobado3.nota;
+
+        var aprobado4 = aprobados[4];
+        nombresAp[4] = aprobado4.nombre;
+        notasAp[4] = aprobado4.nota;
+
+        apLength = aprobados.length;
+
+
+        var titulo1 = document.createElement('div');
+        titulo1.className = "titulo";
+        titulo1.innerText = 'Los Estudiantes aprobados son:';
+        document.body.appendChild(titulo1);
+
+
+        for (var i = 0; i < apLength; i++) {
+            var dato1 = nombresAp[i];
+            var dato2 = notasAp[i];
+            imprimirAp();
+
+
+        };
+
+
+        function imprimirAp() {
+
+            var newDiv = document.createElement('div');
+            newDiv.innerText = dato1;
+            newDiv.className = "texto";
+            document.body.appendChild(newDiv);
+            var newDiv2 = document.createElement('div');
+            newDiv2.innerText = dato2;
+            newDiv2.className = "texto";
+            document.body.appendChild(newDiv2);
+        };
+
+
+
+        var nombresRe = [];
+        var notasRe = [];
+
+        var reprobado0 = reprobados[0];
+        nombresRe[0] = reprobado0.nombre;
+        notasRe[0] = reprobado0.nota;
+
+        var reprobado1 = reprobados[1];
+        nombresRe[1] = reprobado1.nombre;
+        notasRe[1] = reprobado1.nota;
+
+        var reprobado2 = reprobados[2];
+        nombresRe[2] = reprobado2.nombre;
+        notasRe[2] = reprobado2.nota;
+        
+
+        reLength = reprobados.length;
+
+
+        var titulo2 = document.createElement('div');
+        titulo2.className = "titulo";
+        titulo2.innerText = 'Los Estudiantes reprobados son:';
+        document.body.appendChild(titulo2);
+
+
+        for (var i = 0; i < reLength; i++) {
+            var dato1 = nombresRe[i];
+            var dato2 = notasRe[i];
+            imprimirAp();
+
+
+        };
+
+
+        function imprimirAp() {
+
+            var newDiv = document.createElement('div');
+            newDiv.innerText = dato1;
+            newDiv.className = "texto";
+            document.body.appendChild(newDiv);
+            var newDiv2 = document.createElement('div');
+            newDiv2.innerText = dato2;
+            document.body.appendChild(newDiv2);
+        };
+
+
+
+
+
+        // console.log(alumnos.length);
+        // console.log(alumno0);
+        // console.log(alumno0.nombre);
+        // console.log(alumno0.nota);
+        // console.log(nombres);
+        // console.log(notas);
+        console.log(estudiantes);
+        console.log(aprobados);
+        console.log(reprobados);
+
+
+    </script>
+
+    <div class="texto">
+        <a href="index.html">Volver</a>
+    </div>
+
+</body>
+
+</html>
